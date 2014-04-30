@@ -33,20 +33,6 @@
     [self addBackGround];
     [self initData];
     [self firstBornLabel];
-//    [self testBornLabel];
-//    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20 , 60, 70, 100)];
-//    label.text = @"2";
-//    label.backgroundColor = [UIColor greenColor];
-//    label.textAlignment = NSTextAlignmentCenter;
-//    label.tintColor = [UIColor blackColor];
-//    label.tag = 123;
-//    [self.view addSubview:label];
-    
-//    int r;
-//    for (int i = 0; i<=20; i++) {
-//        r = arc4random()%5+1;
-//        NSLog(@"r = %d",r);
-//    }
     
     UISwipeGestureRecognizer *tapGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)];
     [tapGesture setNumberOfTouchesRequired:1];
@@ -175,100 +161,6 @@
     self.C_3 = YES;
     self.C_4 = YES;
 
-}
--(void)testBornLabel
-{
-    self.testArray =  [NSMutableArray arrayWithObjects:
-                             [NSNumber numberWithInt:11],
-                             [NSNumber numberWithInt:21],
-                             [NSNumber numberWithInt:31],
-                             [NSNumber numberWithInt:41],
-                             [NSNumber numberWithInt:12],
-                             [NSNumber numberWithInt:22],
-                             [NSNumber numberWithInt:32],
-                             [NSNumber numberWithInt:42],
-                             [NSNumber numberWithInt:13],
-                             [NSNumber numberWithInt:23],
-                             [NSNumber numberWithInt:33],
-                             [NSNumber numberWithInt:43],
-                             [NSNumber numberWithInt:14],
-                             [NSNumber numberWithInt:24],
-                             [NSNumber numberWithInt:34],
-                             [NSNumber numberWithInt:44],
-                             
-                             nil];
-    LuckyLabel *label = [[LuckyLabel alloc]init];
-    label.placeTag = 13;
-    label.numberTag = 2;
-    label.text = [NSString stringWithFormat:@"%d",label.numberTag];
-
-     NSDictionary *dic =  [self caculatePosition:[NSNumber numberWithInt:label.placeTag]];
-    
-    CGRect frame =  CGRectMake([[dic objectForKey:kPlaceX] intValue]+1, [[dic objectForKey:kPlaceY] intValue]+1, kOneLabelwidth-2, kOneLabelHeight-2);
-    
-    label.frame = frame;
-    [self.currentExistArray addObject:label];
-    [self.view addSubview:label];
-    
-    for (int i=0; i<15; i++) {
-        LuckyLabel *label = [[LuckyLabel alloc]init];
-        label.placeTag = [[self.testArray objectAtIndex:i] intValue];
-        label.numberTag = 2*(i+1);
-        label.text = [NSString stringWithFormat:@"%d",label.numberTag];
-        
-        NSDictionary *dic =  [self caculatePosition:[NSNumber numberWithInt:label.placeTag]];
-        
-        CGRect frame =  CGRectMake([[dic objectForKey:kPlaceX] intValue]+1, [[dic objectForKey:kPlaceY] intValue]+1, kOneLabelwidth-2, kOneLabelHeight-2);
-        
-        label.frame = frame;
-        [self.currentExistArray addObject:label];
-        [self.view addSubview:label];
-        
-    }
-    
-    
-    
-    LuckyLabel *label2 = [[LuckyLabel alloc]init];
-    label2.placeTag = 23;
-    label2.numberTag = 2;
-    label2.text = [NSString stringWithFormat:@"%d",label2.numberTag];
-
-    NSDictionary *dic2 =  [self caculatePosition:[NSNumber numberWithInt:label2.placeTag]];
-//
-    CGRect frame2 =  CGRectMake([[dic2 objectForKey:kPlaceX] intValue]+1, [[dic2 objectForKey:kPlaceY] intValue]+1, kOneLabelwidth-2, kOneLabelHeight-2);
-//    
-    label2.frame = frame2;
-    [self.currentExistArray addObject:label2];
-    [self.view addSubview:label2];
-//
-//    
-//    
-    LuckyLabel *label3 = [[LuckyLabel alloc]init];
-    label3.placeTag = 43;
-    label3.numberTag = 2;
-    label3.text = [NSString stringWithFormat:@"%d",label3.numberTag];
-
-    NSDictionary *dic3 =  [self caculatePosition:[NSNumber numberWithInt:label3.placeTag]];
-//
-    CGRect frame3 =  CGRectMake([[dic3 objectForKey:kPlaceX] intValue]+1, [[dic3 objectForKey:kPlaceY] intValue]+1, kOneLabelwidth-2, kOneLabelHeight-2);
-//
-    label3.frame = frame3;
-    [self.currentExistArray addObject:label3];
-    [self.view addSubview:label3];
-    
-    
-    LuckyLabel *label4 = [[LuckyLabel alloc]init];
-    label4.placeTag = 14;
-    label4.numberTag = 4;
-    label4.text = [NSString stringWithFormat:@"%d",label4.numberTag];
-//
-    NSDictionary *dic4 =  [self caculatePosition:[NSNumber numberWithInt:label4.placeTag]];
-//
-    CGRect frame4 =  CGRectMake([[dic4 objectForKey:kPlaceX] intValue]+1, [[dic4 objectForKey:kPlaceY] intValue]+1, kOneLabelwidth-2, kOneLabelHeight-2);
-//
-    label4.frame = frame4;
-    [self.currentExistArray addObject:label4];
-    [self.view addSubview:label4];
 }
 
 -(void)firstBornLabel
